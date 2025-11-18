@@ -21,7 +21,7 @@ with st.sidebar:
 fig, ax = plt.subplots(1, 2, figsize=(10, 3))
 
 # Histograma de edades
-ax[0].hist(df["Age"], bins=div)
+ax[0].hist(df["Age"], bins=div, color="orange" )
 ax[0].set_xlabel("Edad")
 ax[0].set_ylabel("Frecuencia")
 ax[0].set_title("Histograma de edades")
@@ -33,7 +33,7 @@ cant_male = len(df_male)
 df_female = df[df["Sex"] == "female"]
 cant_female = len(df_female)
 
-ax[1].bar(["Masculino", "Femenino"], [cant_male, cant_female])
+ax[1].bar(["Masculino", "Femenino"], [cant_male, cant_female], color=["blue","pink"])
 ax[1].set_xlabel("Sexo")
 ax[1].set_ylabel("Cantidad")
 ax[1].set_title('Distribución de hombres y mujeres')
