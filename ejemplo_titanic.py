@@ -8,7 +8,7 @@ df = pd.read_csv("database_titanic.csv")
 # Muestra un título y una descripción en la aplicación Streamlit.
 st.write("""
 # ACCIDENTE EN EL TITANIC
-## datos proporciònados 
+## datos proporcionados 
 """)
 
 # Usando la notación "with" para crear una barra lateral en la aplicación Streamlit.
@@ -41,22 +41,22 @@ ax[1].set_title('Distribución de hombres y mujeres')
 st.pyplot(fig)
 
 # -----------------------------
-# NUEVO GRÁFICO: SOBREVIVIENTES POR SEXO
+# NUEVO GRÁFICO: SOBREVIVIENTES SEPARADOS POR SEXO
 # -----------------------------
 
-st.write("## Sobrevivientes por sexo")
+st.write("## Sobrevivientes")
 
 # Agrupar por sexo y sobrevivencia (Survived = 1)
 survivors = df[df["Survived"] == 1].groupby("Sex").size()
 
 # Preparar datos
-labels = ["Hombres", "Mujeres"]
+labels = ["Masculino", "femenino"]
 values = [survivors.get("male", 0), survivors.get("female", 0)]
 
 # Crear figura
 fig2, ax2 = plt.subplots(figsize=(5, 3))
 ax2.bar(labels, values)
-ax2.set_xlabel("Sexo")
+ax2.set_xlabel("Sexo ")
 ax2.set_ylabel("Cantidad de sobrevivientes")
 ax2.set_title("Sobrevivientes separados por sexo")
 
@@ -64,7 +64,7 @@ st.pyplot(fig2)
 # -----------------------------
 
 st.write("""
-## Resultado de los datos proporciònados
+## Resultado de los datos proporcionados
 """)
 
 # Graficamos una tabla
